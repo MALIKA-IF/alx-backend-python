@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+import uuid
 
 # Create your models here.
 class user(AbstractUser):
@@ -12,7 +13,7 @@ class user(AbstractUser):
        created_at = models.TimeField(auto_now= True)
 
 
-class conversation(models.Model):
+class Conversation(models.Model):
     conversation_id =models.UUIDField(primary_key=True, unique=True)
     
     participants_id = models.ForeignKey(user, on_delete=models.CASCADE)
@@ -20,7 +21,7 @@ class conversation(models.Model):
 
     
 
-class message(models.Model):
+class Message(models.Model):
 
     message_id =models.UUIDField(primary_key=True)
     sender_id =models.ForeignKey(user,on_delete=models.CASCADE)
