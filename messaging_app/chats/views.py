@@ -6,10 +6,13 @@ from .serializers import ConversationSerializer,MessageSerializer
 # Create your views here.
 
 class ConversationViewSet(viewsets.ModelViewSet):
+    
     queryset=Conversation.objects.all()
     serializer_class = ConversationSerializer
+    data=Conversation.objects.filter().values()
 
 
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
-    serializer_class = MessageSerializer    
+    serializer_class = MessageSerializer  
+    data=Message.objects.filter().values()  
