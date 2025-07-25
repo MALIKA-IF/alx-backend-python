@@ -47,6 +47,7 @@ REST_FRAMEWORK = {
            'rest_framework.permissions.IsAuthenticated',
            'rest_framework.authentication.SessionAuthentication',
            'JWTAuthentication',
+           'rest_framework.authentication.BasicAuthentication',
        ]
    }
 
